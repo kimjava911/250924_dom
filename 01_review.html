@@ -77,6 +77,30 @@
       // style
       // style="font-size:32px;"
       box1.style.fontSize = "32px";
+
+      // document.write("?"); // 이게 실행되는 시점에 해당 위치에 요소를 직접 작성해서 추가해주는 기능.
+      // 요소 추가, 삭제.
+      const p = document.createElement("p");
+      console.log(p);
+      p.textContent = "item1";
+      box1.append(p); // push, add, append
+      // append 연결 관계.
+      box2.append(p); // 이동함 (객체라서)
+
+      // parent : 소속될 곳, text : 집어넣을 text.
+      function createItem(parent, text) {
+        // 범위. -> 한정.
+        const item = document.createElement("p");
+        item.textContent = text;
+        parent.append(item);
+        return item;
+      }
+
+      const item2 = createItem(box3, "item2");
+      const item3 = createItem(box3, "item3");
+
+      item2.remove();
+      box3.removeChild(item3);
     </script>
   </body>
 </html>
