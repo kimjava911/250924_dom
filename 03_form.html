@@ -16,6 +16,11 @@
   </head>
   <body>
     <form id="userForm">
+      <!-- 묶는다 -->
+      <!-- 1. 부모/자식 태그 -->
+      <!-- 2. form -> 데이터 -->
+      <!-- form -> name. -> FormData -->
+      <!-- 사용자가 입력 -> input, select, textarea...  -->
       <label>
         이름 :
         <input
@@ -108,7 +113,6 @@
         // console.log(event.currentTarget);
         const formData2 = new FormData(event.currentTarget);
         console.log(formData2);
-
         // 1. 직관적이고 일반적인 방법 : id를 부여해서 각각 input 호출 qs.
         // 2. form (qs) -> new FormData
         // 3. event -> currentTarget = form -> FormData.
