@@ -16,7 +16,9 @@
     <button id="btn">눌러보세요2</button>
     <section>
       <input type="text" id="name" placeholder="이름을 입력해주세요" />
+      <button id="inputBtn">추가</button>
     </section>
+    <section id="memo"></section>
 
     <script>
       const btn = document.querySelector("#btn");
@@ -36,6 +38,19 @@
       });
       // 이게 최종적으로 많이 보는 코드
       btn.addEventListener("click", () => console.log("버튼 누름4!"));
+      // input -> id를 사용해서 -> value
+      const inputBtn = document.querySelector("#inputBtn");
+      const nameInput = document.querySelector("#name");
+      const memoBox = document.querySelector("#memo");
+      inputBtn.addEventListener("click", () => {
+        // console.log(nameInput.getAttribute("value")); // 작동 X
+        console.log(nameInput.value);
+        const memoElement = document.createElement("div");
+        // memoElement.textContent = nameInput.value;
+        const { value: memoText } = nameInput; // 구조분해할당
+        memoElement.textContent = memoText;
+        memoBox.append(memoElement);
+      });
     </script>
   </body>
 </html>
