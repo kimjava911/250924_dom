@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+        padding: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>
+        이름 :
+        <input />
+      </label>
+      <label> 주소 : <input /> </label>
+      <label> 나이 : <input type="number" /> </label>
+      <label> 생일 : <input type="date" /> </label>
+      <label> 취업 여부 : <input type="checkbox" /> </label>
+      <label>
+        포지션 :
+        <select>
+          <option>백엔드</option>
+          <option>풀스택</option>
+          <option>클라우드</option>
+        </select>
+      </label>
+
+      <button>제출</button>
+    </form>
+  </body>
+</html>
