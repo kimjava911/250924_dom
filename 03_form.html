@@ -18,7 +18,12 @@
     <form id="userForm">
       <label>
         이름 :
-        <input name="userName" id="userName" />
+        <input
+          name="userName"
+          id="userName"
+          required
+          placeholder="이름을 입력하세요"
+        />
       </label>
       <label> 주소 : <input name="userAddress" id="userAddress" /> </label>
       <label>
@@ -61,14 +66,28 @@
         alert("제출되었습니다!");
         // 그냥 내버려두면 -> get요청 보낸다 -> 그 주소로 '접속' -> 새롭게 화면을 불러온다
         // -> 그 화면을 불러오면서 아예 기존에 구성해놨던 js 작업이나 화면 X.
+        // type : checkbox -> checked -> boolean : true/false -> 참/거짓
+        // select -> option value에 직접적으로 값을 넣어주셔도 되고, switch에 넣어서 -> let으로 대입해서 쓰셔도 됨
+        let position = "";
+        switch (userPosition.value) {
+          case "1":
+            position = "백엔드";
+            break;
+          case "2":
+            position = "풀스택";
+            break;
+          case "3":
+            position = "클라우드";
+            break;
+        }
         result.innerHTML = `
             <ul>
                 <li>이름 : ${userName.value}</li>
                 <li>주소 : ${userAddress.value}</li>
                 <li>나이 : ${userAge.value}</li>
                 <li>생일 : ${userBirth.value}</li>
-                <li>취업 여부 : ${userJob.checked}</li>
-                <li>포지션 : ${userPosition.value}</li>
+                <li>취업 여부 : ${userJob.checked ? "취업" : "미취업"}</li>
+                <li>포지션 : ${position}</li>
             </ul>
         `;
       });
