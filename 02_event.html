@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event</title>
     <style>
+      #memo {
+        display: flex;
+        flex-wrap: wrap;
+      }
       .memo {
         width: 120px;
         height: 80px;
@@ -60,6 +64,12 @@
         const { value: memoText } = nameInput; // 구조분해할당
         memoElement.textContent = memoText;
         memoElement.classList.add("memo");
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "삭제";
+        removeBtn.addEventListener("click", () => {
+          memoElement.remove();
+        });
+        memoElement.append(removeBtn);
         memoBox.append(memoElement);
       });
     </script>
